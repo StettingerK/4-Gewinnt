@@ -1,3 +1,5 @@
+import gui
+
 def check_horizontal(grid:list[list:str]) -> bool:
     for char in chars:
         for line in grid:
@@ -12,7 +14,11 @@ def check_horizontal(grid:list[list:str]) -> bool:
     return False
 
 def main():
+    grid = [["   " for _ in range(7)] for _ in range(6)]
     print("Hello from 4-gewinnt!")
+    spieler_liste =gui.input_player() 
+    gui.generiere_spielfeld(grid)
+    gui.move()
 
 chars = ["x","o"]
 
