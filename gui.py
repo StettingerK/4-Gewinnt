@@ -2,10 +2,10 @@ from rich import print
 
 def generiere_spielfeld(grid):
     print("1 2 3 4 5 6 7")
+    print("_"*15)
     for zeile in grid:
-        print("|".join(cell if cell != "" else " " for cell in zeile))
-
-
+        print("|"+"|".join(cell if cell != "" else " " for cell in zeile)+ "|")
+        print("_"*15)
 
     print(farbe("x"))
 
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     grid = [
         [" ", " ", " ", " ", " ", " ", " "],
         [" ", " ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", "O"],
         [" ", " ", " ", " ", " ", " ", " "],
         [" ", " ", " ", " ", " ", " ", " "],
         [" ", " ", " ", " ", " ", " ", " "]
