@@ -32,10 +32,19 @@ def input_player():
 
         return [spieler_1, spieler_2]
 
-        
+def move():
+    while True:
+        try:
+            spalte = int(input("In welche Spalte möchtes du deinen Stein setzen? (1-7): "))
+            if 1 <= spalte and spalte <= 7:
+                return spalte - 1
+            else:
+                print("Bitte eine Zahl zwischen 1 und 7 eingeben.")
+        except ValueError:
+            print("Bitte nur Zahlen eingeben.")
+            
 
 if __name__ == "__main__":
-    generiere_spielfeld()
 
     
     #grid = [["a" for _ in range(7)] for _ in range(6)]
@@ -48,3 +57,4 @@ if __name__ == "__main__":
         [" ", " ", " ", " ", " ", " ", " "]
     ]
     generiere_spielfeld(grid)
+    move()
