@@ -7,7 +7,6 @@ def generiere_spielfeld(grid):
 
 
 
-    print(farbe("x"))
 
 def farbe(zeichen: str) -> str:
     if zeichen == "x":
@@ -16,8 +15,17 @@ def farbe(zeichen: str) -> str:
         return "[bold blue]O[/bold blue]"
     return " "
 
-if __name__ == "__main__":
+def input_player():
+    spieler = []
+    spieler_1 = input("Geben Sie den Namen von Spieler 1 ein: ")
+    spieler_2 = input("Geben Sie den Namen von Spieler 2 ein: ")
+    spieler.append(spieler_1, spieler_2)
+    return(spieler)
 
+if __name__ == "__main__":
+    generiere_spielfeld()
+
+    
     #grid = [["a" for _ in range(7)] for _ in range(6)]
     grid = [
         [" ", " ", " ", " ", " ", " ", " "],
