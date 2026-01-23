@@ -1,6 +1,12 @@
 from rich import print
 
-def generiere_spielfeld():
+def generiere_spielfeld(grid):
+    print("1 2 3 4 5 6 7")
+    for zeile in grid:
+        print("|".join(cell if cell != "" else " " for cell in zeile))
+
+
+
     print(farbe("x"))
 
 def farbe(zeichen: str) -> str:
@@ -11,15 +17,14 @@ def farbe(zeichen: str) -> str:
     return " "
 
 if __name__ == "__main__":
-    generiere_spielfeld()
 
     #grid = [["a" for _ in range(7)] for _ in range(6)]
     grid = [
-        [" ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " "],
-        [" ", " ", " ", " ", " ", " "]
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "]
     ]
+    generiere_spielfeld(grid)
