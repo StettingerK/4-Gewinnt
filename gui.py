@@ -7,7 +7,6 @@ def generiere_spielfeld(grid):
 
 
 
-    print(farbe("x"))
 
 def farbe(zeichen: str) -> str:
     if zeichen == "x":
@@ -16,8 +15,29 @@ def farbe(zeichen: str) -> str:
         return "[bold blue]O[/bold blue]"
     return " "
 
-if __name__ == "__main__":
+def input_player():
+    while True:
+        spieler_1 = input("Geben Sie den Namen von Spieler 1 ein: ").strip()
+        spieler_2 = input("Geben Sie den Namen von Spieler 2 ein: ").strip()
+        
+        if not spieler_1:
+            print("Spieler 1 darf nicht leer sein.")
+            continue
+        if not spieler_2:
+            print("Spieler 2 darf nicht leer sein.")
+            continue
+        if spieler_1 == spieler_2:
+            print("Die Spielernamen müssen unterschiedlich sein.")
+            continue
 
+        return [spieler_1, spieler_2]
+
+        
+
+if __name__ == "__main__":
+    generiere_spielfeld()
+
+    
     #grid = [["a" for _ in range(7)] for _ in range(6)]
     grid = [
         [" ", " ", " ", " ", " ", " ", " "],
