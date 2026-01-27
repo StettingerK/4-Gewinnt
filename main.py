@@ -45,6 +45,7 @@ if __name__ == "__main__":
         ["x", "x", "o", " ", " ", " ", " "],
         ["x", "x", "x", "o", "o", "x", " "],
         ["o", "x", "x", "o", "o", "o", "x"]
+        
     ]
     main()
     if check_horizontal(grid):
