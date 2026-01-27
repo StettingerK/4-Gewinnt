@@ -45,7 +45,12 @@ def check_diagonal(grid:list[list:str]) -> bool:
             if value1 == value2 == value3 == value4 and value1 != " ":
                 return True
     
-                
+def unentschieden(grid):
+    for line in grid:
+        if " " in line:
+            return False
+    return True
+        
 
 def main():
     grid = [["   " for _ in range(7)] for _ in range(6)]
@@ -57,6 +62,7 @@ def main():
             print(f"Spieler {spieler_liste[i]}: {spieler_liste[i]} ({chars[i]})") 
             gui.move(grid, chars[i])
             gui.generiere_spielfeld(grid)
+
 
 chars = ["x","o"]
 
