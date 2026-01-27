@@ -4,7 +4,7 @@ def generiere_spielfeld(grid):
     print("| 1 | 2 | 3 | 4 | 5 | 6 | 7 |")
     print("-"*29)
     for zeile in grid:
-        print("|" + "|".join(farbe(cell) if cell != "   " else "   " for cell in zeile) + "|")
+        print("|" + "|".join(" " + farbe(cell) + " " if cell != "   " else "   " for cell in zeile) + "|")
         print("-"*29)
 
 

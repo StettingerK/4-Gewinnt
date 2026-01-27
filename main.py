@@ -56,7 +56,18 @@ def main():
             gui.generiere_spielfeld(grid)
             print(f"Spieler {spieler_liste[i]}: {spieler_liste[i]} ({chars[i]})") 
             gui.move(grid, chars[i])
-            gui.generiere_spielfeld(grid)
+            if check_horizontal(grid):
+                gui.generiere_spielfeld(grid)
+                print(f"Spieler {spieler_liste[i]} hat gewonnen!")
+                return
+            if check_vertical(grid):
+                gui.generiere_spielfeld(grid)
+                print(f"Spieler {spieler_liste[i]} hat gewonnen!")
+                return
+            if check_diagonal(grid):
+                gui.generiere_spielfeld(grid)
+                print(f"Spieler {spieler_liste[i]} hat gewonnen!")
+                return
 
 chars = ["x","o"]
 
