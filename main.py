@@ -57,7 +57,7 @@ def unentschieden(grid):
         
 
 def main():
-    grid = [["   " for _ in range(7)] for _ in range(6)]
+    grid = [[" " for _ in range(7)] for _ in range(6)]
     print("Hello from 4-gewinnt!")
     spieler_liste =gui.input_player()
     while True:
@@ -78,6 +78,10 @@ def main():
                 gui.generiere_spielfeld(grid)
                 print(f"Spieler {spieler_liste[i]} hat gewonnen!")
                 return
+            if  unentschieden(grid):
+                gui.generiere_spielfeld(grid)
+                print(f"Kein Spieler hat gewonnen, Unentschieden!")
+                return
             
 
 
@@ -92,9 +96,8 @@ if __name__ == "__main__":
     #     ["x", "x", "o", " ", " ", " ", " "],
     #     ["x", "x", "x", "o", "o", "x", " "],
     #     ["o", "x", "x", "o", "o", "o", "x"]
-
-    # ]
     main()
+
     # if check_horizontal(grid):
     #     print("gewonnen vertical")
     # if check_vertical(grid):

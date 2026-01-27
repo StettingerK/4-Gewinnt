@@ -4,7 +4,7 @@ def generiere_spielfeld(grid):
     print("| 1 | 2 | 3 | 4 | 5 | 6 | 7 |")
     print("-"*29)
     for zeile in grid:
-        print("|" + "|".join(" " + farbe(cell) + " " if cell != "   " else "   " for cell in zeile) + "|")
+        print("|" + "|".join(" " + farbe(cell) + " " if cell != " " else "   " for cell in zeile) + "|")
         print("-"*29)
 
 
@@ -38,7 +38,7 @@ def move(grid, zeichen):
             spalte = int(input("In welche Spalte möchtes du deinen Stein setzen? (1-7): "))
             if 1 <= spalte and spalte <= 7:
                 for zeile in range(len(grid)-1, -1, -1):
-                    if grid[zeile][spalte - 1] == "   ":
+                    if grid[zeile][spalte - 1] == " ":
                         grid[zeile][spalte - 1] = zeichen
                         return
                 print("Diese Spalte ist voll!")
@@ -54,12 +54,12 @@ if __name__ == "__main__":
     
     #grid = [["a" for _ in range(7)] for _ in range(6)]
     grid = [
-        ["   ", "   ", "   ", "   ", "   ", "   ", "   "],
-        ["   ", "   ", "   ", "   ", "   ", "   ", "   "],
-        ["   ", "   ", "   ", "   ", "   ", "   ", "   "],
-        ["   ", "   ", "   ", "   ", "   ", "   ", "   "],
-        ["   ", "   ", "   ", "   ", "   ", "   ", "   "],
-        ["   ", "   ", "   ", "   ", "   ", "   ", "   "]
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "],
+        [" ", " ", " ", " ", " ", " ", " "]
     ]
     generiere_spielfeld(grid)
     move()
