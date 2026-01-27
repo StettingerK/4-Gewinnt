@@ -50,10 +50,12 @@ def check_diagonal(grid:list[list:str]) -> bool:
 def main():
     grid = [["   " for _ in range(7)] for _ in range(6)]
     print("Hello from 4-gewinnt!")
-    spieler_liste =gui.input_player() 
+    spieler_liste =gui.input_player()
     gui.generiere_spielfeld(grid)
+    print(f"Spieler 1: {spieler_liste[0]} (X)") 
     gui.move(grid, "x")
     gui.generiere_spielfeld(grid)
+    print(f"Spieler 2: {spieler_liste[1]} (O)")
     gui.move(grid, "o")
     gui.generiere_spielfeld(grid)
 
