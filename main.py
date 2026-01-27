@@ -28,6 +28,25 @@ def check_vertical(grid:list[list:str]) -> bool:
             column_counter +=1
     return False
 
+def check_diagonal(grid:list[list:str]) -> bool:
+    for line in range(3):
+        for coulmn in range(4):                #erstes mal auslesen
+            value1 = grid[line][coulmn+3]      #[" ", " ", " ", "X", " ", " ", " "],
+            value2 = grid[line+1][coulmn+2]    #[" ", " ", "X", " ", " ", " ", " "],
+            value3 = grid[line+2][coulmn+1]    #[" ", "X", " ", " ", " ", " ", " "],
+            value4 = grid[line+3][coulmn]      #["X", " ", " ", " ", " ", " ", " "],
+            if value1 == value2 == value3 == value4 and value1 != " ":
+                return True
+        for coulmn in range(4):                #erstes mal auslesen
+            value1 = grid[line][coulmn]        #["X", " ", " ", " ", " ", " ", " "],
+            value2 = grid[line+1][coulmn+1]    #[" ", "X", " ", " ", " ", " ", " "],
+            value3 = grid[line+2][coulmn+2]    #[" ", " ", "X", " ", " ", " ", " "],
+            value4 = grid[line+3][coulmn+3]    #[" ", " ", " ", "X", " ", " ", " "],
+            if value1 == value2 == value3 == value4 and value1 != " ":
+                return True
+    
+                
+
 def main():
     grid = [["   " for _ in range(7)] for _ in range(6)]
     print("Hello from 4-gewinnt!")
@@ -51,3 +70,5 @@ if __name__ == "__main__":
         print("gewonnen vertical")
     if check_vertical(grid):
         print("gewonnen horizontal")
+    if check_diagonal(grid):
+        print("gewonnen diagonal")
