@@ -33,7 +33,10 @@ def main():
     print("Hello from 4-gewinnt!")
     spieler_liste =gui.input_player() 
     gui.generiere_spielfeld(grid)
-    gui.move()
+    gui.move(grid, "x")
+    gui.generiere_spielfeld(grid)
+    gui.move(grid, "o")
+    gui.generiere_spielfeld(grid)
 
 chars = ["x","o"]
 
@@ -45,7 +48,7 @@ if __name__ == "__main__":
         ["x", "x", "o", " ", " ", " ", " "],
         ["x", "x", "x", "o", "o", "x", " "],
         ["o", "x", "x", "o", "o", "o", "x"]
-        
+
     ]
     main()
     if check_horizontal(grid):
