@@ -51,13 +51,12 @@ def main():
     grid = [["   " for _ in range(7)] for _ in range(6)]
     print("Hello from 4-gewinnt!")
     spieler_liste =gui.input_player()
-    gui.generiere_spielfeld(grid)
-    print(f"Spieler 1: {spieler_liste[0]} (X)") 
-    gui.move(grid, "x")
-    gui.generiere_spielfeld(grid)
-    print(f"Spieler 2: {spieler_liste[1]} (O)")
-    gui.move(grid, "o")
-    gui.generiere_spielfeld(grid)
+    while True:
+        for i in range(2):
+            gui.generiere_spielfeld(grid)
+            print(f"Spieler {spieler_liste[i]}: {spieler_liste[i]} ({chars[i]})") 
+            gui.move(grid, chars[i])
+            gui.generiere_spielfeld(grid)
 
 chars = ["x","o"]
 
